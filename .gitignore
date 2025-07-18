@@ -1,0 +1,5 @@
+# Exclude setup script
+setup_devops_diary.sh
+
+# IDE files
+.idea/
