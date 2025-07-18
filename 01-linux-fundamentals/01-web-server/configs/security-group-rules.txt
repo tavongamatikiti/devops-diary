@@ -1,0 +1,14 @@
+# Security Group Configuration for Web Server
+
+Inbound Rules:
+- SSH (22) from 0.0.0.0/0
+- HTTP (80) from 0.0.0.0/0
+- HTTPS (443) from 0.0.0.0/0
+
+Outbound Rules:
+- All Traffic to 0.0.0.0/0
+
+Notes:
+- SSH allows remote administration
+- HTTP/HTTPS allow web traffic
+- Consider restricting SSH to specific IPs in production
