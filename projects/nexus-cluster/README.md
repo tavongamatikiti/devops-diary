@@ -21,8 +21,10 @@ Internet → Load Balancer → [App Server 1, App Server 2, App Server 3] → Da
 ## Infrastructure Details
 
 ### EC2 Instances
-- **nexus-alpha**: 172.31.31.161 (Primary web/app server)
-- **nexus-database**: 172.31.23.224 (PostgreSQL database)
+- **nexus-alpha**: 172.31.0.0 (Primary web/app server)
+- **nexus-database**: 172.31.0.0 (PostgreSQL database)
+
+**Note**: Replace the IP addresses above with your own private or public IP addresses when implementing this infrastructure.
 
 ### Security Configuration
 - SSH access via key pairs
