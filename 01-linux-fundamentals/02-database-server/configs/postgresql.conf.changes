@@ -1,0 +1,10 @@
+# PostgreSQL Configuration Changes for Remote Access
+
+# In /etc/postgresql/16/main/postgresql.conf
+# Change:
+#listen_addresses = 'localhost'
+# To:
+listen_addresses = '*'
+
+# This allows PostgreSQL to listen on all network interfaces
+# Required for remote connections from application servers

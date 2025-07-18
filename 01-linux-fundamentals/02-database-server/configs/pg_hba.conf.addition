@@ -1,0 +1,14 @@
+# pg_hba.conf Addition for Remote Access
+
+# Add this line to /etc/postgresql/16/main/pg_hba.conf
+# Format: TYPE  DATABASE  USER  ADDRESS  METHOD
+
+# Replace 172.31.0.0 with your application server's private IP address
+host    nexus_db    nexus_admin    172.31.0.0/32    md5
+
+# Explanation:
+# host = TCP/IP connection
+# nexus_db = database name
+# nexus_admin = username
+# 172.31.0.0/32 = specific IP address (replace with your application server's IP)
+# md5 = password authentication method
