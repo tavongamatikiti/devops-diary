@@ -38,3 +38,30 @@ Internet → Load Balancer → [App Server 1, App Server 2, App Server 3] → Da
 - [ ] Application server (Day 3)
 - [ ] Load balancer (Day 4)
 - [ ] Monitoring (Day 5)
+
+### Day 2: Database Server (nexus-database)
+- **Service**: PostgreSQL 16
+- **Database**: nexus_db with user authentication
+- **Features**: Remote access, automated backups, PHP integration
+- **Security**: Private network access only, user-based authentication
+- **Monitoring**: Connection tracking, query logging
+
+## Database Schema
+
+### Tables Created
+- **users**: Authentication system with roles and permissions
+- **servers**: Infrastructure inventory and status tracking
+- **server_logs**: Centralized logging for all cluster components
+
+### Connection Details
+- **Host**: 172.31.0.0 (private IP - replace with your actual database server IP)
+- **Port**: 5432 (PostgreSQL default)
+- **Database**: nexus_db
+- **Access**: Restricted to application servers only
+
+## Current Status
+- [x] Web server operational (Day 1)
+- [x] Database server operational (Day 2)
+- [ ] Application server (Day 3)
+- [ ] Load balancer (Day 4)
+- [ ] Monitoring (Day 5)
