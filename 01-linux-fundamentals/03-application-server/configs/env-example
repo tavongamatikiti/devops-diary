@@ -1,0 +1,8 @@
+# Environment Variables for Node.js API
+NODE_ENV=production
+PORT=3000
+DB_HOST=10.0.2.xxx
+DB_NAME=nexus_db
+DB_USER=nexus_admin
+DB_PASSWORD=your_secure_password
+SERVER_NAME=nexus-alpha
