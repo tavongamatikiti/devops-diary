@@ -3,16 +3,27 @@
 ## Step 1: Install Node.js and PM2
 
 ```bash
-# Install Node.js LTS
-curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
-sudo apt install nodejs -y
+# Download and install nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 
-# Verify installation
-node --version
-npm --version
+# Load nvm into current session (in lieu of restarting the shell)
+\. "$HOME/.nvm/nvm.sh"
+
+# Download and install Node.js version 22
+nvm install 22
+
+# Verify the Node.js version
+node -v # Should print "v22.17.1"
+nvm current # Should print "v22.17.1"
+
+# Enable and install Yarn using corepack
+corepack enable yarn
+
+# Verify Yarn version
+yarn -v
 
 # Install PM2 globally
-sudo npm install -g pm2
+npm install -g pm2
 
 # Verify PM2 installation
 pm2 --version
@@ -29,9 +40,9 @@ cd /opt/nexus-api
 # Initialize Node.js project
 npm init -y
 
-# Install dependencies
-npm install express pg cors helmet morgan bcryptjs jsonwebtoken dotenv prom-client
-npm install --save-dev nodemon
+# Install dependencies using Yarn
+yarn add express pg cors helmet morgan bcryptjs jsonwebtoken dotenv prom-client
+yarn add --dev nodemon
 ```
 
 ## Step 3: Create Node.js API Application
@@ -133,19 +144,22 @@ killall node
 pkill -f "node app.js"
 ```
 
-### Background Process Management
+### Package Management
 ```bash
-# Run in background
-nohup node app.js &
+# Install packages with Yarn
+yarn install
 
-# Screen sessions
-screen -S api-session
-screen -r api-session
+# Add new dependencies
+yarn add package-name
 
-# Job control
-jobs
-fg %1
-bg %1
+# Remove packages
+yarn remove package-name
+
+# Update packages
+yarn upgrade
+
+# Install development dependencies
+yarn add --dev package-name
 ```
 
 ### Service Management
